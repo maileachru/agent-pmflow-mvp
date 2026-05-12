@@ -1,0 +1,24 @@
+[project]
+name = "pmflow-codex"
+version = "0.3.0"
+description = "Minimal PM automation workflow for Codex"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0.1",
+    "requests>=2.31.0",
+    "python-pptx>=0.6.23",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[project.scripts]
+pmflow = "pmflow.cli:main"
+
+[tool.setuptools]
+packages = ["pmflow"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
