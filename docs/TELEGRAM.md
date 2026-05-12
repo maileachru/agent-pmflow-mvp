@@ -1,5 +1,9 @@
 # Telegram Setup
 
+Agent PMFlow MVP generates Telegram reminder drafts by default.
+
+Never send Telegram messages unless the user explicitly requests sending.
+
 ## 1. Create bot
 
 Open BotFather:
@@ -25,7 +29,7 @@ TELEGRAM_CHAT_ID=xxx
 
 ---
 
-## 3. Test
+## 3. Test direct send only when explicitly requested
 
 ```bash
 pmflow telegram-send --message "test"
@@ -37,4 +41,4 @@ pmflow telegram-send --message "test"
 
 Default workflow should generate drafts only.
 
-Only send messages after human review.
+Only send messages after explicit human review and approval.

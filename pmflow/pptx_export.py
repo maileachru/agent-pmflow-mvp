@@ -32,7 +32,7 @@ def export_pptx(outline_path: str, output_path: str) -> str:
     slides = parse_outline(outline_path)
 
     if not slides:
-        slides = [("PMFlow Codex", ["No slides found in outline"])]
+        slides = [("Agent PMFlow MVP", ["No slides found in outline"])]
 
     for title, bullets in slides:
         slide = prs.slides.add_slide(prs.slide_layouts[1])

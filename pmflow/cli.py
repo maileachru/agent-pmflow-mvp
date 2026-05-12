@@ -32,7 +32,7 @@ def doctor() -> None:
             print(f"- {item}")
         raise SystemExit(1)
 
-    print("PMFlow Codex is ready.")
+    print("Agent PMFlow MVP is ready.")
 
 
 def demo() -> None:

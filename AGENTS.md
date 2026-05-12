@@ -1,6 +1,6 @@
-# PMFlow Codex — Agent Instructions
+# Agent PMFlow MVP — Agent Instructions
 
-This repository is a deterministic PM automation system for Codex.
+This repository is a deterministic, minimal PM automation system for Codex.
 
 ## Primary Workflow
 
@@ -10,9 +10,11 @@ Use this command for the standard weekly workflow:
 pmflow run-weekly --meeting <meeting-file> --title <title>
 ```
 
+Keep the CLI command name as `pmflow`.
+
 ## Core Rule
 
-Do not invent process. Use the smallest relevant workflow.
+Do not invent process. Use the smallest relevant workflow and keep the system deterministic and minimal.
 
 ## Active Capabilities
 
@@ -69,4 +71,6 @@ pmflow run-weekly --meeting <meeting-file> --title <title> --send-telegram --dry
 
 ## Minimalism Rule
 
-Do not add Jira, Confluence, email, RAG, vector database, risk engine, or multi-agent orchestration unless explicitly requested.
+Do not add extra integrations unless explicitly requested.
+
+Do not add Jira, Confluence, email automation, RAG, vector database, risk engine, multi-agent orchestration, or complex platform logic unless explicitly requested.

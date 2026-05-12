@@ -1,7 +1,7 @@
 [project]
-name = "pmflow-codex"
-version = "0.3.0"
-description = "Minimal PM automation workflow for Codex"
+name = "agent-pmflow-mvp"
+version = "0.3.2"
+description = "Minimal PM automation and Codex-ready agent project for meeting follow-up workflows"
 requires-python = ">=3.10"
 dependencies = [
     "python-dotenv>=1.0.1",

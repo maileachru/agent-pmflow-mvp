@@ -1,25 +1,47 @@
-# Review Findings
+# Repository Review
 
-## 1. HIGH: No tests in previous package
+## Current Production Assessment
 
-Fix: Added pytest smoke tests for run-weekly, Telegram draft generation, and PPTX export.
+Agent PMFlow MVP is correctly scoped as a minimal, deterministic PM automation agent:
 
-## 2. HIGH: run-weekly could send Telegram immediately with flag but no dry-run safeguard
+- Primary workflow is `pmflow run-weekly`.
+- CLI command remains `pmflow`.
+- Core outputs are meeting protocol, decisions, action items, weekly status, Telegram draft, and PowerPoint deck.
+- Telegram sending is opt-in and should happen only after explicit human approval.
+- Jira, Confluence, email automation, RAG, vector databases, and multi-agent orchestration remain out of scope.
 
-Fix: Added --dry-run and explicit send summary.
+## Why generated files are not kept in git
 
-## 3. MEDIUM: Action extraction was too naive and often left owner/due date as TBD
+The following files/directories are generated locally and should not be versioned:
 
-Fix: Added lightweight owner and due-date extraction heuristics.
+- `*.egg-info/` — Python packaging metadata produced by `pip install -e .`.
+- `__pycache__/` and `*.pyc` — Python bytecode caches produced when modules are imported.
+- `.pytest_cache/` — pytest runtime cache.
+- `memory/` and `outputs/` — PMFlow artifacts produced by demo and weekly workflow runs.
 
-## 4. MEDIUM: No release notes
+Keeping them out of git makes diffs smaller, avoids machine-specific noise, and prevents stale package metadata after renames.
 
-Fix: Added CHANGELOG.md.
+## Changes made from this review
 
-## 5. MEDIUM: GitHub Actions only ran demo
+- Added `.gitignore` for Python caches, package build artifacts, local environments, secrets, and generated PMFlow outputs.
+- Added `.env.example` because Telegram documentation references it.
 
-Fix: Updated workflow to run pytest.
+## Recommendations
 
-## 6. LOW: README was usable but not release-oriented
+### Keep now
 
-Fix: Rewrote README with upload-to-GitHub/Codex instructions.
+- Keep `pmflow run-weekly` as the main workflow.
+- Keep direct subcommands only as small utilities for debugging or manual artifact generation.
+- Keep Telegram real sending behind explicit human approval.
+- Keep generated files out of the repository unless they are curated examples.
+
+### Improve next, still minimal
+
+1. Add one CLI smoke test for `pmflow doctor`.
+2. Add one test that confirms `run_weekly(..., send_telegram=False)` never calls Telegram sending.
+3. Add a tiny sample expected-output fixture only if human reviewers need a stable artifact example.
+4. Consider validating that `--send-telegram` without `--dry-run` requires environment variables before workflow work begins, so failures happen early.
+
+### Do not add unless explicitly requested
+
+- Jira, Confluence, email automation, RAG, vector database, risk engine, multi-agent orchestration, or complex platform logic.
