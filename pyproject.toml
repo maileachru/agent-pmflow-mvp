@@ -1,6 +1,6 @@
 [project]
 name = "agent-pmflow-mvp"
-version = "0.3.2"
+version = "0.4.0"
 description = "Minimal PM automation and Codex-ready agent project for meeting follow-up workflows"
 requires-python = ">=3.10"
 dependencies = [

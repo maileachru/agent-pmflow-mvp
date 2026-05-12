@@ -15,6 +15,7 @@ Generates:
 - action items
 - weekly status
 - Telegram reminder draft
+- Mermaid Gantt plan
 - PowerPoint deck
 
 ---
@@ -36,6 +37,16 @@ Run only when the user explicitly requests sending:
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync   --send-telegram
 ```
+
+---
+
+## Generate Gantt Only
+
+```bash
+pmflow gantt --actions memory/actions/product-sync-actions.md --title product-sync
+```
+
+Gantt generation schedules only explicit ISO due dates (`YYYY-MM-DD`) and keeps vague dates in a PM review table.
 
 ---
 

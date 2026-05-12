@@ -22,7 +22,7 @@ The required checks were run successfully during the production cleanup.
 - Package installs as `agent-pmflow-mvp`.
 - CLI command remains `pmflow`.
 - `pmflow doctor` reports the CLI is ready.
-- `pmflow demo` produces demo PM artifacts.
+- `pmflow demo` produces demo PM artifacts, including the Gantt planning artifact.
 - `pytest` passes.
 - Generated/cache files such as `*.egg-info/`, `__pycache__/`, `.pytest_cache/`, and `*.pyc` are ignored and not committed.
 - Runtime PMFlow artifacts in `memory/` and `outputs/` are ignored unless intentionally promoted to curated examples.

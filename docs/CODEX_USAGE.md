@@ -22,6 +22,7 @@ Generate:
 - action items
 - weekly status
 - Telegram reminders
+- Mermaid Gantt plan
 - PowerPoint deck
 
 Do not send Telegram messages.

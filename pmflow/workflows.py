@@ -7,6 +7,7 @@ from .processor import process_meeting
 from .status import generate_weekly_status
 from .telegram import generate_reminders, send_file_text
 from .pptx_export import export_pptx
+from .gantt import generate_gantt
 
 
 def run_weekly(
@@ -35,10 +36,13 @@ def run_weekly(
         message_limit=telegram_message_limit,
     )
 
+    gantt_path = generate_gantt(slug, outputs["actions"])
+
     result = {
         **outputs,
         "weekly_status": status_path,
         "telegram_draft": telegram_draft_path,
+        "gantt": gantt_path,
         "telegram_sent": "false",
     }
 

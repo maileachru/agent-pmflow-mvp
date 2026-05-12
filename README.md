@@ -8,6 +8,7 @@ It turns a meeting transcript or notes file into:
 - decision log
 - action items
 - weekly stakeholder status
+- Mermaid Gantt plan
 - Telegram reminder draft
 - PowerPoint deck
 - output manifest
@@ -24,6 +25,8 @@ Detailed documentation:
 - `docs/CODEX_USAGE.md`
 - `docs/PROJECT_STRUCTURE.md`
 - `docs/OPERATING_MODEL.md`
+- `docs/PM_SKILLS.md`
+- `docs/AGENT_COMPATIBILITY.md`
 
 ## Repository name
 
@@ -98,6 +101,7 @@ memory/decisions/product-sync-decisions.md
 memory/actions/product-sync-actions.md
 outputs/status/product-sync-weekly-status.md
 outputs/telegram/product-sync-telegram-reminders.md
+outputs/planning/product-sync-gantt.md
 outputs/presentations/product-sync-outline.md
 outputs/presentations/product-sync.pptx
 outputs/product-sync-manifest.txt
@@ -125,6 +129,16 @@ cp .env.example .env
 pmflow run-weekly --meeting examples/demo-meeting.md --title demo --send-telegram
 ```
 
+## Gantt planning
+
+Generated automatically by `run-weekly` as a Mermaid Markdown diagram. Only ISO due dates (`YYYY-MM-DD`) are placed on the timeline; vague dates stay in the PM review table.
+
+Manual generation:
+
+```bash
+pmflow gantt --actions memory/actions/demo-actions.md --title demo
+```
+
 ## PowerPoint
 
 Generated automatically by `run-weekly`.
@@ -149,6 +163,7 @@ Use `.env.example` as the Telegram configuration template and keep real `.env` s
 
 ## What is intentionally excluded
 
+- software development lifecycle automation
 - Jira
 - Confluence
 - email automation

@@ -26,7 +26,8 @@ Only these capabilities are active:
 4. Weekly stakeholder status
 5. Telegram reminder draft
 6. Optional Telegram send
-7. PowerPoint outline and PPTX export
+7. Project planning Gantt diagram
+8. PowerPoint outline and PPTX export
 
 Everything else is intentionally out of scope.
 
@@ -49,6 +50,7 @@ For every PM task:
 - Weekly status reports: `/outputs/status`
 - Telegram messages: `/outputs/telegram`
 - Presentation outlines and PPTX files: `/outputs/presentations`
+- Gantt planning diagrams: `/outputs/planning`
 
 ## Human Review Rule
 

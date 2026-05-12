@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.0
+
+### Added
+
+- Added deterministic Mermaid Gantt planning output from action items.
+- Added a project-planning Gantt skill and template.
+- Added PM skill-library and multi-agent compatibility documentation for Codex, Claude Code, Cursor, Gemini CLI, Windsurf, OpenCode, GitHub Copilot, Kiro, and other agents.
+
+### Changed
+
+- Updated the standard weekly workflow documentation to include the planning artifact while keeping Telegram send human-approved.
+
 ## 0.3.2
 
 ### Changed
