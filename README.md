@@ -21,6 +21,7 @@ Detailed documentation:
 
 - `docs/GETTING_STARTED.md`
 - `docs/WORKFLOWS.md`
+- `docs/ARTIFACT_FLOW.md`
 - `docs/TELEGRAM.md`
 - `docs/CODEX_USAGE.md`
 - `docs/PROJECT_STRUCTURE.md`
@@ -81,7 +82,7 @@ Expected behavior:
 
 ## Weekly workflow
 
-Put meeting notes here:
+The input artifact is a Markdown meeting note, transcript, or chat export. Put it here:
 
 ```text
 meetings/inbox/product-sync.md
@@ -93,7 +94,7 @@ Run:
 pmflow run-weekly --meeting meetings/inbox/product-sync.md --title product-sync
 ```
 
-Generated files:
+Generated files. See `docs/ARTIFACT_FLOW.md` for the full input and handoff contract:
 
 ```text
 memory/meetings/product-sync-protocol.md

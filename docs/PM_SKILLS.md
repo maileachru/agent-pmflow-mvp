@@ -22,6 +22,8 @@ Every PM skill should stay:
 
 ## Standard Weekly Skill Chain
 
+The standard input artifact is a Markdown meeting note, transcript, or chat export under `meetings/inbox/`. The generated action and decision artifacts then feed the downstream skills.
+
 ```text
 meeting notes
   ↓
@@ -37,6 +39,8 @@ presentation-generation
   ↓
 Telegram draft only
 ```
+
+For exact artifact paths and manual one-artifact commands, see `docs/ARTIFACT_FLOW.md`.
 
 Run it with:
 

@@ -2,13 +2,13 @@
 
 ## Standard Weekly Workflow
 
-Use `pmflow run-weekly` as the primary Agent PMFlow MVP workflow:
+Input: one Markdown meeting note, transcript, or chat export in `meetings/inbox/`. Use `pmflow run-weekly` as the primary Agent PMFlow MVP workflow:
 
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync
 ```
 
-Generates:
+Generates the full artifact chain documented in `docs/ARTIFACT_FLOW.md`:
 
 - meeting protocol
 - decision log
@@ -42,6 +42,8 @@ pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-s
 
 ## Generate Gantt Only
 
+Input: the action table generated at `memory/actions/<title>-actions.md`.
+
 ```bash
 pmflow gantt --actions memory/actions/product-sync-actions.md --title product-sync
 ```
@@ -51,6 +53,8 @@ Gantt generation schedules only explicit ISO due dates (`YYYY-MM-DD`) and keeps 
 ---
 
 ## Skip PowerPoint
+
+Use this when the Markdown outline is enough and no PPTX file is needed.
 
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync   --no-pptx
