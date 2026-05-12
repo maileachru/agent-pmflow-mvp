@@ -33,8 +33,9 @@ def test_backlog_template_command_creates_file(tmp_path, monkeypatch):
 
     main()
 
-    generated = Path("backlog/normalized/pulse-youth-alumni-модуль-мероприятия.yaml")
+    generated = Path("backlog/normalized/pulse-youth-alumni-backlog-item.yaml")
     assert generated.exists()
+    assert generated.name.isascii()
 
 
 def test_generated_backlog_template_contains_project_id(tmp_path, monkeypatch):
