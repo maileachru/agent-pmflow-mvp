@@ -11,6 +11,7 @@ ACTION_PATTERNS = [
     r"(?P<owner>[A-ZА-ЯЁ][A-Za-zА-Яа-яЁё]+)\s+will\s+(?P<task>.+?)(?:\s+by\s+(?P<due>.+))?$",
     r"(?P<owner>[A-ZА-ЯЁ][A-Za-zА-Яа-яЁё]+)\s+должен\s+(?P<task>.+?)(?:\s+до\s+(?P<due>.+))?$",
     r"(?P<owner>[A-ZА-ЯЁ][A-Za-zА-Яа-яЁё]+)\s+подготовит\s+(?P<task>.+?)(?:\s+до\s+(?P<due>.+))?$",
+    r"(?P<owner>[A-ZА-ЯЁ][A-Za-zА-Яа-яЁё]+)\s+сделает\s+(?P<task>.+?)(?:\s+до\s+(?P<due>.+))?$",
     r"(?P<owner>[A-ZА-ЯЁ][A-Za-zА-Яа-яЁё]+)\s+review\s+(?P<task>.+?)(?:\s+by\s+(?P<due>.+))?$",
 ]
 
@@ -66,7 +67,10 @@ def extract_actions(text: str) -> list[ActionItem]:
     )
 
     for line in candidate_lines:
-        parsed = False
+        lower = line.lower()
+        if lower.startswith(("decision:", "решение:", "risk:", "риск:", "open question:", "вопрос:")):
+            continue
+
         for pattern in ACTION_PATTERNS:
             match = re.search(pattern, line)
             if match:
@@ -74,10 +78,7 @@ def extract_actions(text: str) -> list[ActionItem]:
                 task = match.groupdict().get("task") or line
                 due = match.groupdict().get("due") or "TBD"
                 actions.append(ActionItem(task=task.strip("."), owner=owner, due_date=due.strip(".")))
-                parsed = True
                 break
-        if not parsed:
-            actions.append(ActionItem(task=line))
 
     return actions
 
