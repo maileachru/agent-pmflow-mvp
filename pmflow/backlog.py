@@ -19,7 +19,7 @@ def backlog_template(project_id: str, title: str) -> str:
         raise ValueError("title is required")
 
     item_id = slugify(title)
-    path = BACKLOG_TEMPLATE_DIR / f"{project_id}-{item_id}.yaml"
+    path = BACKLOG_TEMPLATE_DIR / f"{project_id}-backlog-item.yaml"
     content = f"""
 id: {item_id}
 project_id: {project_id}
