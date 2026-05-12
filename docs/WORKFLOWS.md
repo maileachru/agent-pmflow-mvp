@@ -14,9 +14,11 @@ Generates the full artifact chain documented in `docs/ARTIFACT_FLOW.md`:
 - decision log
 - action items
 - weekly status
-- Telegram reminder draft
-- Mermaid Gantt plan
-- PowerPoint deck
+- Telegram draft
+- Gantt/planning artifact
+- PowerPoint outline
+- PPTX
+- manifest
 
 ---
 
@@ -59,3 +61,18 @@ Use this when the Markdown outline is enough and no PPTX file is needed.
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync   --no-pptx
 ```
+
+
+---
+
+## Product Reporting
+
+Use reporting commands after backlog items exist in `backlog/normalized/*.yaml`:
+
+```bash
+pmflow backlog-report --project-id campus-career-hub
+pmflow roadmap-report --project-id campus-career-hub
+pmflow executive-report --project-id campus-career-hub --title "Campus Career Hub"
+```
+
+The commands generate backlog quality, roadmap, and executive reports. See `docs/REPORTING.md`.
