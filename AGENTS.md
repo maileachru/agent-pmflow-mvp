@@ -28,6 +28,7 @@ Only these capabilities are active:
 6. Optional Telegram send
 7. Project planning Gantt diagram
 8. PowerPoint outline and PPTX export
+9. Universal backlog management
 
 Everything else is intentionally out of scope.
 
@@ -51,6 +52,23 @@ For every PM task:
 - Telegram messages: `/outputs/telegram`
 - Presentation outlines and PPTX files: `/outputs/presentations`
 - Gantt planning diagrams: `/outputs/planning`
+- Backlog raw inputs: `/backlog/raw`
+- Normalized backlog items: `/backlog/normalized`
+- Backlog roadmaps: `/backlog/roadmap`
+- Backlog quality reports: `/backlog/reports`
+
+## Backlog Workflow
+
+When the user asks to import, analyze, normalize, report on, or create roadmap outputs from a backlog:
+
+1. Read `skills/backlog-management/SKILL.md`.
+2. Keep backlog items separate from meeting follow-up actions.
+3. Save raw backlog inputs in `backlog/raw/`.
+4. Save normalized backlog item YAML files in `backlog/normalized/`.
+5. Save roadmap outputs in `backlog/roadmap/`.
+6. Save backlog quality reports in `backlog/reports/`.
+
+Do not store backlog items in `memory/actions/`.
 
 ## Human Review Rule
 

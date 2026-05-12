@@ -1,0 +1,36 @@
+id: pulse-events-module
+project_id: pulse-youth-alumni
+title: Модуль Мероприятия
+description: Единый модуль для публикации и управления мероприятиями проекта.
+type: feature
+status: new
+priority: high
+owner: TBD
+estimate:
+  value: TBD
+  unit: tbd
+dates:
+  created: null
+  updated: null
+  start: null
+  due: null
+  quarter: 2026-Q2
+acceptance_criteria:
+  - Можно создать мероприятие с названием, описанием, датой и ответственным.
+  - Пользователь видит список актуальных мероприятий.
+definition_of_done:
+  - Требования согласованы с владельцем проекта.
+  - Критерии приемки проверены на демо.
+success_metrics:
+  - Сокращено ручное сопровождение мероприятий.
+dependencies: []
+risks:
+  - Не согласован финальный набор полей мероприятия.
+open_questions:
+  - Нужна ли регистрация участников в первой версии?
+custom_fields:
+  alumni_applicable: true
+  pgk_required: false
+  artifact: backlog-source
+  source_quarter: Q2 2026
+  comment: Перенесено в универсальную модель backlog item.
