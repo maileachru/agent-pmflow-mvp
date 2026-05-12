@@ -1,8 +1,8 @@
 # Operating Model
 
-PMFlow Codex is not an AI chat assistant.
+Agent PMFlow MVP is not an AI chat assistant.
 
-It is a deterministic PM operating workflow.
+It is a deterministic PM automation workflow for Codex-ready meeting follow-up.
 
 ## Principle
 
@@ -28,15 +28,16 @@ Human PM remains responsible for:
 - approvals
 - communication
 - prioritization
+- explicitly approving any Telegram send
 
 ## System Responsibilities
 
-PMFlow automates:
+Agent PMFlow MVP automates:
 
 - formatting
 - extraction
 - reporting
-- reminders
+- reminder draft generation
 - presentation generation
 
 ## What NOT to do
@@ -47,5 +48,6 @@ Do not turn the project into:
 - agent swarm
 - enterprise orchestration layer
 - giant integration hub
+- Jira, Confluence, email, RAG, or vector database system
 
-Keep the workflow small and reliable.
+Keep the workflow small, deterministic, and reliable.

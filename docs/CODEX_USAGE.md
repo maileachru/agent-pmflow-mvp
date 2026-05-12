@@ -1,5 +1,7 @@
 # Codex Usage
 
+Agent PMFlow MVP is a Codex-ready PM automation agent project.
+
 ## Open project
 
 ```bash
@@ -23,6 +25,7 @@ Generate:
 - PowerPoint deck
 
 Do not send Telegram messages.
+Do not add extra integrations.
 ```
 
 ---
@@ -36,3 +39,4 @@ Codex should:
 3. Use `pmflow run-weekly`
 4. Save artifacts into correct folders
 5. Avoid adding extra frameworks or integrations
+6. Keep the workflow deterministic and minimal

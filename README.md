@@ -1,6 +1,6 @@
-# PMFlow Codex
+# Agent PMFlow MVP
 
-**PMFlow Codex** is a minimal Project Manager operating system for Codex.
+**Agent PMFlow MVP** (`agent-pmflow-mvp`) is a minimal PM automation and Codex-ready agent project.
 
 It turns a meeting transcript or notes file into:
 
@@ -12,7 +12,7 @@ It turns a meeting transcript or notes file into:
 - PowerPoint deck
 - output manifest
 
-
+The project is intentionally deterministic and small. The CLI command remains `pmflow`.
 
 ## Documentation
 
@@ -27,10 +27,10 @@ Detailed documentation:
 
 ## Repository name
 
-Recommended name:
+Recommended repository/package name:
 
 ```text
-pmflow-codex
+agent-pmflow-mvp
 ```
 
 ## Main command
@@ -56,8 +56,8 @@ pytest
 ```bash
 git init
 git add .
-git commit -m "Initial PMFlow Codex release"
-gh repo create pmflow-codex --private --source=. --remote=origin --push
+git commit -m "Initial Agent PMFlow MVP release"
+gh repo create agent-pmflow-mvp --private --source=. --remote=origin --push
 ```
 
 Then connect the GitHub repository in Codex.
@@ -74,6 +74,7 @@ Expected behavior:
 - uses `pmflow run-weekly`
 - creates PM artifacts
 - does not send Telegram messages
+- does not add extra integrations
 
 ## Weekly workflow
 
@@ -116,7 +117,7 @@ Dry-run send:
 pmflow run-weekly --meeting examples/demo-meeting.md --title demo --send-telegram --dry-run
 ```
 
-Real send:
+Real send only after explicit human request:
 
 ```bash
 cp .env.example .env
@@ -134,6 +135,18 @@ Skip PPTX:
 pmflow run-weekly --meeting examples/demo-meeting.md --title demo --no-pptx
 ```
 
+
+## Repository hygiene
+
+Generated files are intentionally ignored by git:
+
+- `*.egg-info/` from editable package installs
+- `__pycache__/` and `*.pyc` from Python imports
+- `.pytest_cache/` from pytest
+- `memory/` and `outputs/` from local PMFlow runs
+
+Use `.env.example` as the Telegram configuration template and keep real `.env` secrets local.
+
 ## What is intentionally excluded
 
 - Jira
@@ -141,6 +154,7 @@ pmflow run-weekly --meeting examples/demo-meeting.md --title demo --no-pptx
 - email automation
 - RAG/vector DB
 - multi-agent orchestration
+- complex platform logic
 - auto-escalation
 
-These should be added only after the first workflow is used in real PM operations.
+Add extra integrations only when explicitly requested.

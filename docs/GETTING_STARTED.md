@@ -1,5 +1,7 @@
 # Getting Started
 
+Agent PMFlow MVP (`agent-pmflow-mvp`) keeps the CLI command as `pmflow`.
+
 ## 1. Install
 
 ```bash

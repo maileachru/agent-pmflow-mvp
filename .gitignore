@@ -1,0 +1,21 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Python package/build artifacts
+*.egg-info/
+build/
+dist/
+
+# Local environments and secrets
+.venv/
+venv/
+.env
+
+# Generated PMFlow runtime artifacts
+memory/
+outputs/
+
+# Local meeting notes/transcripts
+meetings/inbox/*.md

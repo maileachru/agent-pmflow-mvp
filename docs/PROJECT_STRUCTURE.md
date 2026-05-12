@@ -1,7 +1,7 @@
 # Project Structure
 
 ```text
-pmflow-codex/
+agent-pmflow-mvp/
 │
 ├── AGENTS.md
 ├── README.md
@@ -38,6 +38,10 @@ Generated operational outputs:
 - status reports
 - Telegram drafts
 - PPTX files
+
+### pmflow
+
+Python package that exposes the `pmflow` CLI.
 
 ### skills
 

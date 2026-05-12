@@ -2,6 +2,8 @@
 
 ## Standard Weekly Workflow
 
+Use `pmflow run-weekly` as the primary Agent PMFlow MVP workflow:
+
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync
 ```
@@ -19,6 +21,8 @@ Generates:
 
 ## Safe Telegram Test
 
+Use dry-run mode for send testing:
+
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync   --send-telegram   --dry-run
 ```
@@ -26,6 +30,8 @@ pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-s
 ---
 
 ## Real Telegram Send
+
+Run only when the user explicitly requests sending:
 
 ```bash
 pmflow run-weekly   --meeting meetings/inbox/product-sync.md   --title product-sync   --send-telegram

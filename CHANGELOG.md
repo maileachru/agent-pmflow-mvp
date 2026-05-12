@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.2
+
+### Changed
+
+- Renamed repository/package branding to Agent PMFlow MVP (`agent-pmflow-mvp`).
+- Kept the CLI command as `pmflow`.
+- Updated package metadata to describe the project as PM automation and Codex-ready.
+- Updated README, AGENTS.md, and docs to reinforce deterministic minimalism, `pmflow run-weekly`, and Telegram human-review rules.
+
+### Removed
+
+- Removed generated Python package/cache artifacts from the repository tree.
+
 ## 0.3.0
 
 ### Added
