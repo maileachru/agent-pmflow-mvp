@@ -9,6 +9,7 @@ from .telegram import generate_reminders, send_message
 from .pptx_export import export_pptx
 from .gantt import generate_gantt
 from .workflows import run_weekly
+from .backlog import backlog_template
 
 
 def print_result(result: dict[str, str]) -> None:
@@ -29,6 +30,10 @@ def doctor() -> None:
         "templates/gantt-template.md",
         "docs/AGENT_COMPATIBILITY.md",
         "docs/PM_SKILLS.md",
+        "skills/backlog-management/SKILL.md",
+        "backlog/schema/backlog-item.schema.yaml",
+        "backlog/examples/backlog-item.example.yaml",
+        "docs/BACKLOG_MODEL.md",
     ]
     missing = [p for p in required if not Path(p).exists()]
     if missing:
@@ -85,6 +90,10 @@ def main() -> None:
     p_gantt.add_argument("--title", default="project-plan")
     p_gantt.add_argument("--actions", required=True)
 
+    p_backlog_template = sub.add_parser("backlog-template")
+    p_backlog_template.add_argument("--project-id", required=True)
+    p_backlog_template.add_argument("--title", required=True)
+
     args = parser.parse_args()
 
     if args.command == "doctor":
@@ -113,6 +122,8 @@ def main() -> None:
         print(export_pptx(args.outline, args.output))
     elif args.command == "gantt":
         print(generate_gantt(args.title, args.actions))
+    elif args.command == "backlog-template":
+        print(backlog_template(args.project_id, args.title))
 
 
 if __name__ == "__main__":
