@@ -8,9 +8,9 @@ It turns a meeting transcript or notes file into:
 - decision log
 - action items
 - weekly stakeholder status
-- Mermaid Gantt plan
 - Telegram reminder draft
-- PowerPoint deck
+- Gantt/planning artifact
+- PowerPoint outline and PPTX deck
 - output manifest
 
 The project is intentionally deterministic and small. The CLI command remains `pmflow`.
@@ -21,6 +21,7 @@ Detailed documentation:
 
 - `docs/GETTING_STARTED.md`
 - `docs/WORKFLOWS.md`
+- `docs/REPORTING.md`
 - `docs/ARTIFACT_FLOW.md`
 - `docs/TELEGRAM.md`
 - `docs/CODEX_USAGE.md`
@@ -107,6 +108,18 @@ outputs/presentations/product-sync-outline.md
 outputs/presentations/product-sync.pptx
 outputs/product-sync-manifest.txt
 ```
+
+## Product reports
+
+Reporting is available as first-class CLI commands:
+
+```bash
+pmflow backlog-report --project-id campus-career-hub
+pmflow roadmap-report --project-id campus-career-hub
+pmflow executive-report --project-id campus-career-hub --title "Campus Career Hub"
+```
+
+Generated reports are written to `backlog/reports/`, `backlog/roadmap/`, and `outputs/reports/`. See `docs/REPORTING.md`.
 
 ## Safe Telegram mode
 

@@ -29,6 +29,7 @@ Only these capabilities are active:
 7. Project planning Gantt diagram
 8. PowerPoint outline and PPTX export
 9. Universal backlog management
+10. Project reporting via CLI
 
 Everything else is intentionally out of scope.
 
@@ -56,6 +57,7 @@ For every PM task:
 - Normalized backlog items: `/backlog/normalized`
 - Backlog roadmaps: `/backlog/roadmap`
 - Backlog quality reports: `/backlog/reports`
+- Executive reports: `/outputs/reports`
 
 ## Backlog Workflow
 
@@ -69,6 +71,15 @@ When the user asks to import, analyze, normalize, report on, or create roadmap o
 6. Save backlog quality reports in `backlog/reports/`.
 
 Do not store backlog items in `memory/actions/`.
+
+## Project Reporting Workflow
+
+When the user asks for project reports:
+
+1. Use `pmflow backlog-report --project-id <project_id>`.
+2. Use `pmflow roadmap-report --project-id <project_id>`.
+3. Use `pmflow executive-report --project-id <project_id> --title <title>`.
+4. Do not manually create report files unless the CLI command is missing.
 
 ## Human Review Rule
 

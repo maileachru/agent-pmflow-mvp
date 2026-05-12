@@ -9,7 +9,12 @@ from .telegram import generate_reminders, send_message
 from .pptx_export import export_pptx
 from .gantt import generate_gantt
 from .workflows import run_weekly
-from .backlog import backlog_template
+from .backlog import (
+    backlog_template,
+    generate_backlog_report,
+    generate_executive_report,
+    generate_roadmap_report,
+)
 
 
 def print_result(result: dict[str, str]) -> None:
@@ -34,6 +39,7 @@ def doctor() -> None:
         "backlog/schema/backlog-item.schema.yaml",
         "backlog/examples/backlog-item.example.yaml",
         "docs/BACKLOG_MODEL.md",
+        "docs/REPORTING.md",
     ]
     missing = [p for p in required if not Path(p).exists()]
     if missing:
@@ -94,6 +100,16 @@ def main() -> None:
     p_backlog_template.add_argument("--project-id", required=True)
     p_backlog_template.add_argument("--title", required=True)
 
+    p_backlog_report = sub.add_parser("backlog-report")
+    p_backlog_report.add_argument("--project-id", required=True)
+
+    p_roadmap_report = sub.add_parser("roadmap-report")
+    p_roadmap_report.add_argument("--project-id", required=True)
+
+    p_executive_report = sub.add_parser("executive-report")
+    p_executive_report.add_argument("--project-id", required=True)
+    p_executive_report.add_argument("--title", required=True)
+
     args = parser.parse_args()
 
     if args.command == "doctor":
@@ -124,6 +140,12 @@ def main() -> None:
         print(generate_gantt(args.title, args.actions))
     elif args.command == "backlog-template":
         print(backlog_template(args.project_id, args.title))
+    elif args.command == "backlog-report":
+        print(generate_backlog_report(args.project_id))
+    elif args.command == "roadmap-report":
+        print(generate_roadmap_report(args.project_id))
+    elif args.command == "executive-report":
+        print(generate_executive_report(args.project_id, args.title))
 
 
 if __name__ == "__main__":
