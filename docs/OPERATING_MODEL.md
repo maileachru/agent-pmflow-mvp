@@ -16,6 +16,7 @@ pmflow run-weekly
 Protocol
 Actions
 Status
+Gantt plan
 Telegram draft
 PPTX
 ```
@@ -37,6 +38,7 @@ Agent PMFlow MVP automates:
 - formatting
 - extraction
 - reporting
+- lightweight Gantt planning
 - reminder draft generation
 - presentation generation
 

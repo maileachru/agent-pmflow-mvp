@@ -37,6 +37,7 @@ Generated operational outputs:
 
 - status reports
 - Telegram drafts
+- Gantt plans
 - PPTX files
 
 ### pmflow

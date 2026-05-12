@@ -9,6 +9,7 @@ Requirements:
 - Generate decisions
 - Generate action items
 - Generate weekly status
+- Generate Mermaid Gantt plan
 - Generate Telegram reminder draft
 - Generate PowerPoint deck
 - Do not send Telegram messages

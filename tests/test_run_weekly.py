@@ -30,6 +30,7 @@ def test_run_weekly_creates_expected_files(tmp_path, monkeypatch):
         "outline",
         "weekly_status",
         "telegram_draft",
+        "gantt",
         "pptx",
         "telegram_sent",
         "manifest",
@@ -42,3 +43,6 @@ def test_run_weekly_creates_expected_files(tmp_path, monkeypatch):
     assert result["telegram_sent"] == "false"
     assert "Alex" in Path(result["actions"]).read_text(encoding="utf-8")
     assert "Friday" in Path(result["actions"]).read_text(encoding="utf-8")
+    gantt = Path(result["gantt"]).read_text(encoding="utf-8")
+    assert "Unscheduled / Needs PM Review" in gantt
+    assert "Friday" in gantt

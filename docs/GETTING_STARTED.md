@@ -46,5 +46,6 @@ memory/decisions/
 memory/actions/
 outputs/status/
 outputs/telegram/
+outputs/planning/
 outputs/presentations/
 ```

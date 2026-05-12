@@ -7,6 +7,7 @@ from .processor import process_meeting
 from .status import generate_weekly_status
 from .telegram import generate_reminders, send_message
 from .pptx_export import export_pptx
+from .gantt import generate_gantt
 from .workflows import run_weekly
 
 
@@ -22,8 +23,12 @@ def doctor() -> None:
         "skills/meeting-protocol-generation/SKILL.md",
         "skills/stakeholder-status-reporting/SKILL.md",
         "skills/presentation-generation/SKILL.md",
+        "skills/project-planning-gantt/SKILL.md",
         "integrations/telegram/README.md",
         "integrations/powerpoint/README.md",
+        "templates/gantt-template.md",
+        "docs/AGENT_COMPATIBILITY.md",
+        "docs/PM_SKILLS.md",
     ]
     missing = [p for p in required if not Path(p).exists()]
     if missing:
@@ -76,6 +81,10 @@ def main() -> None:
     p_pptx.add_argument("--outline", required=True)
     p_pptx.add_argument("--output", required=True)
 
+    p_gantt = sub.add_parser("gantt")
+    p_gantt.add_argument("--title", default="project-plan")
+    p_gantt.add_argument("--actions", required=True)
+
     args = parser.parse_args()
 
     if args.command == "doctor":
@@ -102,6 +111,8 @@ def main() -> None:
         print(send_message(args.message, dry_run=args.dry_run))
     elif args.command == "pptx":
         print(export_pptx(args.outline, args.output))
+    elif args.command == "gantt":
+        print(generate_gantt(args.title, args.actions))
 
 
 if __name__ == "__main__":
